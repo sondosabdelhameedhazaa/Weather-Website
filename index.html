@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Weather</title>
+</head>
+
+
+<body>
+    <!-- NAV-BAR -->
+    <nav class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <a class="d-flex align-items-center text-white text-decoration-none" href="#">
+                        <img class="w-25 me-3" src="images/logo@2x.png" alt="logo">
+                        <div class="logo-content">
+                            <h5 class="fw-bolder">Weather</h5>
+                            <h6 class="text-secondary">tagline goes here</h6>
+                        </div>
+                    </a>
+                </div>
+
+                <i id="btnDropp" class="fa-solid fa-bars menue fs-1"></i>
+
+                <div class="nav-link">
+                    <ul class="ms-auto d-flex gap-2">
+                        <li class="nav-item">
+                            <a class="active" aria-current="page" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#">News</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#">Live cameras</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#">Photos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropp-link pt-5 d-none">
+                <ul class="text-center">
+                    <li class="nav-item rounded-top-4">
+                        <a class="active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#">News</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#">Live cameras</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#">Photos</a>
+                    </li>
+
+                    <li class="nav-item rounded-bottom-4">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="sec-input py-5">
+        <div class="container py-5">
+            <div class="input position-relative mb-5">
+                <input id="locationInput" class="form-control text-white rounded-5 p-4" type="text"
+                    placeholder="Find Your Location">
+                <button id="locationBtn" type="button"
+                    class="main-btn py-3 px-5 border-0 rounded-5 position-absolute top-50 end-0 translate-middle-y me-2">Find</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-days py-5">
+        <div class="container">
+            <div class="weather-days text-white rounded-start-4 rounded-end-4">
+                <div class="row g-0" id="weatherDay">
+                    <div class="col-lg-4 one d-flex justify-content-center align-items-center">
+                        <div class="day-item rounded-start-5 visually-hidden">
+                            <div class="title p-3 d-flex justify-content-between">
+                                <h6></h6>
+                                <h6></h6>
+                            </div>
+
+                            <div class="content py-4 px-3">
+                                <h2></h2>
+                                <div class="state d-flex flex-wrap align-items-center">
+                                    <h2 class="degree my-1 me-5"></h2>
+                                    <img src="" alt="">
+                                </div>
+                                <h5 class="main-color mb-4"></h5>
+                                <div class="icon d-flex gap-3">
+                                    <img src="images/icon-umberella.png" alt="">
+                                    <p class="second-color">20%</p>
+                                    <img src="images/icon-wind.png" alt="">
+                                    <p class="second-color">18km/h</p>
+                                    <img src="images/icon-compass.png" alt="">
+                                    <p class="second-color">East</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SPINNER -->
+                        <span class="loader"></span>
+                    </div>
+
+                    <div class="col-lg-4 d-flex justify-content-center align-items-center">
+                        <div class="day-item visually-hidden">
+                            <div class="title p-3 text-center">
+                                <h6></h6>
+                            </div>
+
+                            <div class="content py-4 px-3 d-flex flex-column align-items-center">
+                                <img src="" alt="">
+                                <h3 class="degree mt-4"></h3>
+                                <h5 class="degree second-color mb-4"></h5>
+                                <h5 class="main-color"></h5>
+                            </div>
+                        </div>
+
+                         <!-- SPINNER -->
+                         <span class="loader"></span>
+                    </div>
+
+                    <div class="col-lg-4 three d-flex justify-content-center align-items-center">
+                        <div class="day-item">
+                            <div class="title p-3 text-center">
+                                <h6></h6>
+                            </div>
+
+                            <div class="content py-4 px-3 d-flex flex-column align-items-center">
+                                <img src="" alt="">
+                                <h3 class="degree mt-4"></h3>
+                                <h5 class="degree second-color mb-4"></h5>
+                                <h5 class="main-color"></h5>
+                            </div>
+                        </div>
+
+                         <!-- SPINNER -->
+                         <span class="loader"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="input position-relative mb-3">
+                        <input class="form-control text-white rounded-5 p-3" type="text"
+                            placeholder="Find Your Location">
+                        <button type="button"
+                            class="main-btn py-2 px-5 border-0 rounded-5 position-absolute top-50 end-0 translate-middle-y me-2">Subscribe</button>
+                    </div>
+                </div>
+
+                <div class="col-md-3 offset-md-1">
+                    <div class="icons d-flex gap-3 mb-3">
+                        <a href="https://www.facebook.com/agbreel88/" target="_blank"><i
+                            class="fa-brands fa-facebook-f rounded-circle d-flex justify-content-center align-items-center"></i></a>
+                        <i
+                            class="fa-brands fa-twitter rounded-circle d-flex justify-content-center align-items-center"></i>
+                        <i
+                            class="fa-brands fa-google-plus-g rounded-circle d-flex justify-content-center align-items-center"></i>
+                        <a href="https://www.linkedin.com/in/ahmed-gbreel-64b4b7229/" target="_blank"><i
+                            class="fa-brands fa-linkedin-in rounded-circle d-flex justify-content-center align-items-center"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-secondary">Copyright 2014 GBREEL. Designed by Ahmed Gbreel. All rights reserved</p>
+        </div>
+
+    </footer>
+
+    <!-- JS -->
+
+       <script src="bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script src="js/index.js"></script>
+</body>
+
+</html>
